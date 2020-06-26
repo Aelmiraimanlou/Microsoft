@@ -1,0 +1,31 @@
+<html>
+<body>
+	<p>
+	 SQLSERVER :
+	1.Database verbinden.
+	2.Datenbank erstellen 
+	3.Tabellen erstellen 
+	4. Diese Procedure schreiben 
+		create procedure CustomersByCountry @country nvarchar (max)
+		as 
+			select * from [CRONUS AG$Customer] where County=@country
+
+	VIsual Studio 2019
+
+	1.visual Studio -Erweiterungen-Erweiterungen verwaltung-Microsoft RDLC Report Designer (Download).
+	2.Rclick auf Projekt -NuGet Packet verwalten - Microsoft.ReportViewer.WinForms.v12 (Instalieren).
+	3.VON Toolbox - Add ReportViewer
+	4.Rclick auf project - Hinzufügen - Neues Element - Bericht 
+	5.Auf Bericht dataset anpassen 
+		1.Datenguellen hinzufügen
+		2.Rclick auf Dataset auswählen dataset
+		3.hinzufügen auf reportViewer1
+	6.DBclick auf Button in form und schreiben dieses Code
+		
+		this.ClientbyInvoicesTableAdapter.Fill(this._Test_DatenBankDataSet.ClientbyInvoices,textBox1.Text);
+				this.reportViewer1.RefreshReport();
+	Video Youtube:
+		https://www.youtube.com/watch?v=m91EvQ1X7JI
+		</p>
+</body>
+</html>
