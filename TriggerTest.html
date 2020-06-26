@@ -1,0 +1,22 @@
+<html>
+<p>
+	SET ANSI_NULLS ON
+	GO
+	SET QUOTED_IDENTIFIER ON
+	GO
+
+	CREATE TRIGGER Trg_InsertInvoice on clients
+	   
+	   AFTER INSERT
+	AS
+
+		SET NOCOUNT ON;
+		declare @ID int ;
+		select @ID = i.client_id from inserted i;
+
+		-- Insert statements for trigger here
+		
+			insert into dbo.invoices(invoice_id,	number,	client_id,	invoice_total,	payment_total,	invoice_date,	due_date,	payment_date)
+					values(2,'03-898-6735',@ID,175.32,	8.18,'2019-06-11','2019-07-01','2019-02-12');
+</p>
+</html>
